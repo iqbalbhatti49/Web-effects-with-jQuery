@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Congratulations</title>
+        <link rel="stylesheet" href="styles_f.css">
+        <link rel="icon" href="js.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Congratulations 🎉</h1>
+        </header>
+        <main>
+            <form onsubmit="process(event)">
+                <h1 style="color: rgb(3, 77, 3); font-family: Verdana, Geneva, Tahoma, sans-serif;">Learning jQuery</h1>
+                <h2>Free sign up</h2>
+                <input type="text" name="fName" maxlength="30" class="name" id="fName" placeholder="First Name" spellcheck="false" aria-label="First Name" required>
+                <input type="text" name="sName" maxlength="30" class="name" id="sName" aria-label="Secod Name" placeholder="Second Name" spellcheck="false" required>
+                <br>
+                <input type="text" name="uName" maxlength="18" class="uName" placeholder="User Name" spellcheck="false" aria-label="User Name" required> <br>
+                <input type="email" name="Email" class="email" placeholder="Email" spellcheck="false" aria-label="Email" required> <br>
+                <input class="phone" id="phone" type="tel" name="phone" required /> <br>
+                <select name="day" class="day">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select name="month" class="month">
+                    <option value="jan">January</option>
+                    <option value="fab">Fabruary</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                </select>
+                <select name="year" class="year">
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                </select>
+                <br>
+                <label for="gender" style="font-size: medium; font-weight: 120%;"> <strong style="font-size: larger;">Gender </strong>
+                    <input type="radio" name="gender" class="gender" value="m"> Male
+                    <input type="radio" name="gender" class="gender" value="f"> Female 
+                    <input type="radio" name="gender" class="gender" value="c"> Custom
+                </label> <br>
+                <input type="password" name="password" class="name" required placeholder="Password" aria-placeholder="Passowrd" min="8" max="24">
+                <input type="password" name="password" class="name" required placeholder="Confirm" aria-placeholder="Confirm Password" min="8" max="24">
+                <br><br>
+                <input type="submit" name="submit" class="button" value="Submit">
+            </form>
+        </main>
+        <script>
+            $(document).ready(function(){
+                $("input").click(function(){
+                    $(this).css("boder-color", "blue");
+                });
+            });
+
+            // script for phone number
+        
+        const phoneInputField = document.querySelector('#phone');
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            utilsScript:
+               "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+
+        const info = document.querySelector(".alert-info");
+        function process(event) {
+            event.preventDefault();
+            const phoneNumber = phoneInput.getNumber();
+            info.style.display = "";
+            info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+        }
+        // Now if I set my VPN to Autria, the plugin will update the default country
+       /* const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "auto",
+            geoIpLookup: getIp,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        }); */
+    </script>
+    </body>
+    
+</html>

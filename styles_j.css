@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(105, 174, 201); 
+    margin-bottom: 50px;
+}
+.head {
+    text-align: center; 
+    border-radius: 5px; 
+    background-color: black; 
+    color: white; 
+    padding: 10px; 
+    margin: 10px;
+}            
+hr {
+    color: black; 
+    margin: 10px; 
+    height: 3px; 
+    background-color: white; 
+    border-radius: 5px;
+}
+header {
+    margin-left: 12px; 
+    display: none;
+} 
+li {margin: 5px; 
+    font-size: medium; 
+    font-weight: 500px; 
+    background-color: rgb(129, 129, 163); 
+    padding: 7px; 
+    display: block;
+}
+ul {
+    display: inline-block; 
+    position: fixed; 
+    margin-left: -34px; 
+    margin-top: 80px;
+} 
+a {
+    text-decoration: none; 
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: large; 
+    font-weight: 200px;
+} 
+.body {
+    margin-left: 280px; 
+    margin-right: 100px; 
+    background-color: rgb(78, 226, 226); 
+    margin-bottom: 30px; 
+    border-radius: 10px;
+} 
+.l1, .l2, .l3 {
+    width: 22px; 
+    height: 3px; 
+    background-color: white; 
+    margin: 6px 0; 
+    margin-left: 30px;
+}
+.l1 {
+    margin-top: -50px;
+}
+input {
+    height: 26px; 
+    width: 190px; 
+    border-radius: 5px; 
+    text-align: center;
+}
+button {
+    height: 30px; 
+    width: 200px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: blue; 
+    border: 1px solid blue; 
+    color: white; 
+    cursor: pointer; 
+    border-radius: 7px; 
+    margin: 5px; 
+    text-transform: uppercase;
+}
+.dom {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    text-align: center;
+}
+.dom2, .link, .p1, .p2, .stext, .rem, .dcss, .dcss2, .div4, .ddimen {
+    padding: 5px; 
+    margin-left: 60px; 
+    margin-right: 60px; 
+    text-align: center; 
+    background-color: rgb(163, 163, 163); 
+    border: 1px solid rgb(77, 75, 75); 
+    border-radius: 5px;
+}
+a.back, a.finish {
+    background-color: red;
+    color: white;
+    height: 34px;
+    width: 100px;
+    border-radius: 14px;
+    text-decoration: none;
+    border: 0.001px solid red;
+    padding-left: 40px; 
+    padding-right: 40px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+a.back {
+    margin-left: 300px; 
+    margin-top: 40px;
+}
+a.finish {
+    margin-left: 590px;
+}

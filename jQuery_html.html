@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery in HTML</title>
+        <link rel="stylesheet" href="styles_j.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="shortcut icon" href="js.png">
+    </head>
+    <body>
+        <!-- heading of this page -->
+         <h1 class="head">jQuery in HTML</h1>
+         <!-- script for three navigation bar  -->
+         <script>
+            $(document).ready(function(){
+                $(".icon").on({
+                    click: function() {
+                        $(".l2").css("width", "10px");
+                    }
+                });
+            });
+         </script>
+         <!-- three navigation bar -->
+        <a href="#button" class="icon">
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <div class="l3"></div>
+        </a>
+        <br><hr>
+        <!-- script for topics -->
+        <script>
+            $(document).ready(function(){
+                $(".a").on({
+                    click: function() {
+                        $(this).css("color", "red");
+                    },
+                    mouseleave: function() {
+                        $(this).css("color", "white");  
+                    }, 
+                    click: function() {
+                        $(this).css("background-color", "green");
+                        $(this).css("color", "red");
+                    },
+                    mouseleave: function() {
+                        $(this).css("background-color", "rgb(129, 129, 163)");
+                    }
+                });
+            });
+        </script>
+       <!-- header and topics -->
+        <header>
+            <h1 style="position: fixed;">Topics</h1>
+            <ul>
+                <li><a href="#get" class="a">jQuery Get</a></li>
+                <li><a href="#set" class="a">jQuery Set</a></li>
+                <li><a href="#add" class="a">jQuery Add</a></li>
+                <li><a href="#remove" class="a">jQuery Remove</a></li>
+                <li><a href="#css" class="a">jQuery CSS Classes</a></li>
+                <li><a href="#cssmethod" class="a">jQuery css() Method</a></li>
+                <li><a href="#dimen" class="a">jQuery Dimentions</a></li>
+            </ul>
+        </header>
+        <!-- srcipt for three navigation bar -->
+        <script>
+            $(document).ready(function(){
+                $(".icon").on({
+                    mouseenter: function() {
+                        $(this).css("color", "blue");
+                    },
+                    mouseleave: function() {
+                        $(this).css("color", "white");
+                    },
+                    click: function() {
+                        $("header").slideToggle("slow");
+                    }
+                });
+            });
+        </script>
+        <!-- body of main page -->
+        <div class="body">
+            <div id="get" class="dom">
+                <h1>jQuery - Get Content and Attributes</h1>
+                <h2>jQuery DOM Manipulation</h2>
+                <div class="dom2">DOM stands for <b>Document Object Model</b></div>
+                <button class="txt">Show text</button>
+                <button class="html">show html</button>
+                <br><br>
+                <input type="text" name="name" class="name" placeholder="Enter your name">
+                <br>
+                <button class="value">Value</button>
+                <div class="link"><a href="https://www.codecademy.com" target="_blank" class="href">Codecademy</a></div>
+                <button class="hrefv">href value</button>
+                <button class="chref">change href</button>
+            </div>
+            <hr>
+            <!-- script for dom -->
+            <script>
+                $(document).ready(function(){
+                    $(".txt").click(function(){
+                        alert("Text: "+ $(".dom2").text());
+                    });
+                });
+                $(document).ready(function(){
+                    $(".html").click(function(){
+                        window.alert("html: "+ $(".dom2").html());
+                    });
+                });
+                $(document).ready(function(){
+                    $(".value").click(function(){
+                        window.alert("Value: "+ $(".name").val());
+                    });
+                });
+                $(document).ready(function(){
+                    $(".hrefv").click(function(){
+                        window.alert($(".href").attr("href"));
+                    });
+                });
+                $(document).ready(function(){
+                    $(".chref").click(function(){
+                        $(".href").text("Codecademy Profile");
+                        $(".href").attr("href", "https://www.codecademy.com/profiles/iqbal_");
+                    });
+                });
+            </script>
+            <div class="dom" id="set">
+                <h1>jQuery - Set Content and Attributes</h1>
+                <div class="p1">My name is Iqbal</div> 
+                <button class="change">change text</button>
+                <button class="oldt">old text</button>
+                <div class="p2">I am a <b>student</b></div> 
+                <button class="chtml">changing with html</button>
+                <button class="oldh">old html</button> <br> <br>
+                <input type="text" name="name" class="input" placeholder="Enter your name"> <br>
+                <button class="dft">Default value</button>
+            </div>
+            <!-- script for jquery set  -->
+            <script>
+                $(document).ready(function(){
+                    $(".change").click(function(){
+                        $(".p1").text("I am 19 years old");
+                    });
+                });
+                $(document).ready(function(){
+                    $(".chtml").click(function(){
+                        $(".p2").html("<b>Superior College</b>");
+                    });
+                });
+                $(document).ready(function(){
+                    $(".dft").click(function(){
+                        $(".input").val("Iqbal Bhatti");
+                    });
+                });
+                $(document).ready(function(){
+                    $(".oldt").click(function(){
+                        $(".p1").text(function(){
+                            return "My name is Iqbal";
+                        });
+                    });
+                });
+                $(document).ready(function(){
+                    $(".oldh").click(function(){
+                        $(".p2").html(function(){
+                            return "I am a <b>student</b>";
+                        });
+                    });
+                });
+            </script>
+            <hr>
+            <!-- add  -->
+            <div class="dom" id="add">
+                <h1>jQuery - Add Elements</h1>
+                <div class="stext">I am a student </div>
+                <button class="app">Append text</button>
+                <button class="pre">prepend text</button>
+                <ol>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                </ol>
+                <button class="alist">append list</button> <br>
+                <img src="php.png" alt="PHP Icon" class="php" style="border-radius: 150px;"> <br>
+                <button class="bef">Insert before</button>
+                <button class="aft">insert after</button>
+            </div>
+            
+            <!-- script for appending information -->
+            <script>
+                $(document).ready(function(){
+                    $(".app").click(function(){
+                        $(".stext").append("of <b>ADP-CS<b> ");
+                    });
+                });
+                $(document).ready(function(){
+                    $(".pre").click(function(){
+                        $(".stext").prepend("My name is Iqbal. ");
+                    });
+                });                $(document).ready(function(){
+                    $(".alist").click(function(){
+                        $("ol").append("<li>List item</li>");
+                    });
+                });
+                $(document).ready(function(){
+                    $(".bef").click(function(){
+                        $(".php").before("<b>1995</b>");
+                    });
+                    $(".aft").click(function(){
+                        $(".php").after("<b>2022</b>");
+                    });
+                });
+            </script>
+            <hr>
+            <!-- jquery for remove -->
+            <div id="remove" class="dom">
+                <h1>jQuery - Remove Elements</h1>
+                <div class="rem">Here's this is a dive element
+                    <p class="line">This line in p element, and p element inside div element</p>
+                    <p class="line">This is another line in p element</p>
+                </div>
+                <button class="remove">Remove div element</button>
+                <button class="empty">Empty div element</button>
+                <button class="remove2">remove p element</button>
+            </div>
+            <!-- script for remove -->
+            <script>
+                $(document).ready(function(){
+                    $(".remove").click(function(){
+                        $(".rem").remove();
+                    });
+                    $(".empty").click(function(){
+                        $(".rem").empty();
+                    });
+                    $(".remove2").click(function(){
+                        $("p").remove(".line");
+                    });
+                });
+            </script>
+            <hr>
+            <!-- jqeury for css add and set -->
+            <div id="css" class="dom">
+                <h1>jQuery - Get and Set CSS Classes</h1>
+                <div class="d1">If your click this button then you see result</div>
+                <div class="d1">In this HTML code every div element changed layout of this page</div>
+                <button class="bcss">change layout</button>
+                <button class="bcss2">change class(div) element</button> <br>
+                <button class="rcss">remove layout</button>
+                <button class="rcss2">remove class</button> <br>
+                <button class="tcss">Change/remove layout</button>
+            <!-- script for set css  -->
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $(".bcss").click(function(){
+                        $("div").addClass("dcss");
+                    });
+                    $(".bcss2").click(function(){
+                        $(".d1").addClass("dcss2");
+                    });
+                    $(".rcss").click(function(){
+                        $("div").removeClass("dcss");
+                    });
+                    $(".rcss2").click(function(){
+                        $(".d1").removeClass("dcss2");
+                    });
+                    $(".tcss").click(function(){
+                        $("div").toggleClass("dcss");
+                    });
+                });
+            </script>
+            <hr>
+            <!-- jquery for css method -->
+            <div class="dom" id="cssmethod">
+                <h1>jQuery - css() Method</h1>
+                <div class="div4">The css() method sets or returns one or more style properties for the selected elements.</div>
+                <button class="cssb1">Change Text color</button>
+                <button class="cssb2">Change background-color</button>
+                <button class="cssb3">Change font size</button>
+            </div>
+            <!-- script for css method -->
+            <script>
+                $(document).ready(function(){
+                    $(".cssb1").click(function(){
+                        $(".div4").css({
+                            "color": "red"
+                        });
+                    });
+                    $(".cssb2").click(function(){
+                        $(".div4").css("background-color", "white");
+                    });
+                    $(".cssb3").click(function(){
+                        $(".div4").css({
+                            "font-size": "200%"
+                        });
+                    });
+                });
+            </script>
+            <hr>
+            <!-- jquery for dimentions -->
+            <div class="dom" id="dimen">
+                <h1>jQuery - Dimensions</h1>
+                <div class="ddimen" style="height: 40px;"></div>
+                <button class="dbtn1">box Dimension </button>
+                <button class="ibtn1">box inner Dimension</button> <br>
+                <button class="obtn1">box outer dimention</button>
+                <button class="tbtn1">true outer dimention</button> <br>
+                <button class="dobtn1">document viewport</button>
+                <button class="brbtn1">browser viewport</button>
+            </div>
+            <!-- script for dementions -->
+            <script>
+                $(document).ready(function(){
+                    $(".dbtn1").click(function(){
+                        var text1 = "";
+                        text1 += "Box Width: "+ $(".ddimen").width() + "</br>";
+                        text1 += "Box Height: " + $(".ddimen").height();
+                        $(".ddimen").html(text1);
+                    });
+                    $(".ibtn1").click(function(){
+                        var text2 = "";
+                        text2 += "Inner box width: " + $(".ddimen").innerWidth() + "</br>";
+                        text2 += "Inner box height: " + $(".ddimen").innerHeight();
+                        $(".ddimen").html(text2);
+                    });
+                    $(".obtn1").click(function(){
+                        var text3 = "";
+                        text3 += "Outer box width: " +$(".ddimen").outerWidth() + "</br>";
+                        text3 += "Outer box height: " +$(".ddimen").outerWidth();
+                        $(".ddimen").html(text3);
+                    });
+                    $(".tbtn1").click(function(){
+                        var text4 = "";
+                        text4 += "Outer box width: " +$(".ddimen").outerWidth(true) + "</br>";
+                        text4 += "Outer box height: " +$(".ddimen").outerWidth(true);
+                        $(".ddimen").html(text4);
+                    });
+                    $(".dobtn1").click(function(){
+                        var text5 = "";
+                        text5 += "Document width/height: " +$(document).width();
+                        text5 += " x " +$(document).height();
+                        $(".ddimen").html(text5);
+                    });
+                    $(".brbtn1").click(function(){
+                        var text6 = "";
+                        text6 += "Browser(window) width/height: " + $(window).width();
+                        text6 += " x " + $(window).height();
+                        $(".ddimen").html(text6);
+                    });
+                });
+            </script>
+            <hr>
+        </div>
+        <div class="BF">
+            <a href="effects.html" class="back">BACK</a>
+            <a href="finish.html" class="finish">FINISH</a>
+        </div>
+    </body>
+</html>
